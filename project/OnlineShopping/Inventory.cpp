@@ -58,13 +58,13 @@ void Inventory::addAllProducts()
     addProductToInventory(p5, 100);
 }
 
-void Inventory::printAllProducts()
+void Inventory::printAllProducts(double discount)
 {
     cout << endl;
     for (ProductAndQuantity pq : allProducts) 
     {
         cout << "    " << left << pq.p.getProductID() << ": " << setw(22) << (pq.p.getCompany() + "'s ");
-        cout << setw(20) << pq.p.getName() << " $" << pq.p.getPrice() << "     [quantity remaining = " << pq.quantity << "]" << endl;
+        cout << setw(20) << pq.p.getName() << " $" << fixed << setprecision(2) << round(pq.p.getPrice() * (1.0 - discount) * 100) / 100.0 << "     [quantity remaining = " << setw(3) << right << pq.quantity << "]" << endl;
     }
     cout << endl;
 }

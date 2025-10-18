@@ -17,12 +17,12 @@ void User::addAllUsers() {
     allUsers.push_back(user1);
 
     VIPUser* vipUser = new VIPUser();
-    vipUser->setUsername("BellaVIP");
+    vipUser->setUsername("AnnaVIP");
     vipUser->setPassword("vippass");
     allUsers.push_back(vipUser);
 
     PremiumUser* premiumUser = new PremiumUser();
-    premiumUser->setUsername("BellaPR");
+    premiumUser->setUsername("DavePR");
     premiumUser->setPassword("premiumpass");
     allUsers.push_back(premiumUser);
 }

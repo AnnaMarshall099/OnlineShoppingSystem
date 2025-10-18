@@ -34,7 +34,7 @@ int main()
 	User::addAllUsers();
 	if (DEBUG)
 	{
-		Inventory::printAllProducts();
+		Inventory::printAllProducts(0.00);
 		testShoppingCart();
 	}
 	Controller app = Controller();

@@ -23,7 +23,7 @@ void Controller::displayMainMenu()
 void Controller::displayViewProductsMenu()
 {
     cout << "Please select from the following options:" << endl;
-    cout << "1. Select a product" << endl;
+    cout << "1. Add product to cart" << endl;
     cout << "2. View cart" << endl;
     cout << "3. Checkout" << endl;
     cout << "4. Return to main menu" << endl;
@@ -109,9 +109,9 @@ void Controller::handleViewProductsMenu()
         {
         case 1:
             if (DEBUG) cout << "Selecting a product to add to cart..." << endl;
-            Inventory::printAllProducts();
+            Inventory::printAllProducts(currentUser->getDiscount());
             selectProductToAddToCart();
-            Inventory::printAllProducts();
+            Inventory::printAllProducts(currentUser->getDiscount());
             displayViewProductsMenu();
 			handleViewProductsMenu();
             break;
@@ -151,7 +151,7 @@ void Controller::handleMainMenu()
         case 1:
             if (DEBUG) cout << "Viewing products..." << endl;
             //viewProducts();
-            Inventory::printAllProducts();
+            Inventory::printAllProducts(currentUser->getDiscount());
             displayViewProductsMenu();
             handleViewProductsMenu();
             break;

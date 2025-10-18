@@ -20,9 +20,7 @@ public:
     static void removeProductFromInventory(Product p);
     static void reduceQuantityFromInventory(Product p, int byHowMany);
     static Product findProductById(int productID);
-
-    // FOR TESTING
-    static void printAllProducts();
+    static void printAllProducts(double discount);
 }; // class Inventory
 
 #endif // !INVENTORY_H
