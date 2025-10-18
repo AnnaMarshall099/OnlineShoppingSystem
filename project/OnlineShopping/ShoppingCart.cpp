@@ -44,6 +44,11 @@ void ShoppingCart::addProductToCart(Product prod, int qty, double price)
 	ShoppingCartItem item = ShoppingCartItem(prod, qty, price);
 	items.push_back(item);
 }
+
+void ShoppingCart::emptyCart()
+{
+	items.clear();
+}
 	
 double ShoppingCart::cartTotalPrice() 
 { 

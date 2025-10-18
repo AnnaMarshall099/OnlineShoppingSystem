@@ -32,6 +32,7 @@ protected:
 public:
 	ShoppingCart();
 	void addProductToCart(Product prod, int qty, double price);
+	void emptyCart();
 	void updateProductQuantity();
 	double cartTotalPrice();
 	void removeProductFromCart();

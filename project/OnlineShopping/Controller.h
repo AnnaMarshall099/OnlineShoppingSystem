@@ -21,13 +21,14 @@ public:
 	static void displayCartContents(ShoppingCart cart);
 
 private:
+	bool exitApp = false;
 	User* currentUser;
 	ShoppingCart cart = ShoppingCart();
-	void viewProducts();
+	void handleMainMenu();
+	void handleViewProductsMenu();
 	void selectProductToAddToCart();
-	void checkout(ShoppingCart cart);
+	void checkout(ShoppingCart* cart);
 	void displayMainMenu();
-	void displayProducts();
 	void displayViewProductsMenu();
 };
 

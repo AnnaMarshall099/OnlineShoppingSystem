@@ -2,9 +2,10 @@
 #include "Address.h"
 #include "ShoppingCart.h"
 
-#include <iostream>
 #include <vector>
 #include <string>
+#include <iostream>
+#include <conio.h>
 using namespace std;
 
 vector<User*> User::allUsers;
@@ -26,13 +27,37 @@ void User::addAllUsers() {
     allUsers.push_back(premiumUser);
 }
 
+string User::getPasswordWindows()
+{
+    string password;
+    char ch;
+    while ((ch = _getch()) != '\r')    // carriage return
+    {
+        if (ch == '\b')         // backspace
+        {
+            if (!password.empty())
+            {
+                cout << "\b \b";
+                password.pop_back();
+            }
+        }
+        else
+        {
+            password += ch;
+            cout << '*';
+        }
+    }
+    cout << '\n';
+    return password;
+}
+
 User* User::getUser() {
     string uname;
     string pword;
     cout << "Enter username: ";
     cin >> uname;
     cout << "Enter password: ";
-    cin >> pword;
+    pword = getPasswordWindows();
     for (User* u : allUsers) {
         if (u->getUsername() == uname ){ //&& u.getPassword() == pword) {
             return u;
@@ -75,5 +100,5 @@ double VIPUser::getDiscount() const {
 }
 
 double PremiumUser::getDiscount() const {
-    return 0.05;
+    return 0.20;
 }

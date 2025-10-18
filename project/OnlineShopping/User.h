@@ -6,6 +6,8 @@
 #include <string>
 #include "Address.h"
 #include "ShoppingCart.h"
+#include <iostream>
+#include <conio.h>
 using namespace std;
 
 class User {
@@ -32,6 +34,9 @@ public:
 	static vector<User*> allUsers;
     static void addAllUsers();
 	virtual double getDiscount() const;
+
+private:
+    static string getPasswordWindows();
 };
 
 class VIPUser : public User {
